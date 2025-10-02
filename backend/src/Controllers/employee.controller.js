@@ -189,7 +189,7 @@ export let updateEmployee = async (req, res) => {
 
 
 
-        if (name) {
+        if (!name) {
             name = employeeData.name   // if data coming from frontend is null then assigning saved values
 
         }

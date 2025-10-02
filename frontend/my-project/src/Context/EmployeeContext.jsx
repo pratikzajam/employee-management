@@ -3,11 +3,14 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 
 
+
 export let EmployeeContext = createContext();
 
 
 export const EmployeeProvider = ({ children }) => {
+    const API_URL = import.meta.env.VITE_API_URL;
 
+   
     const [loading, setloading] = useState(false)
     const [employee, setEmployee] = useState(false)
     const [error, setError] = useState(null)
@@ -21,7 +24,7 @@ export const EmployeeProvider = ({ children }) => {
         try {
             setloading(true);    //loader will get displayed
 
-            let response = await axios.get("http://localhost:3000/api/employee/v1/employees");   //api call
+            let response = await axios.get(`${API_URL}/api/employee/v1/employees`);   //api call
 
 
 
@@ -51,7 +54,7 @@ export const EmployeeProvider = ({ children }) => {
 
 
 
-            let response = await axios.post("http://localhost:3000/api/employee/v1/employees", {
+            let response = await axios.post(`${API_URL}/api/employee/v1/employees`, {
                 name: name,
                 email: email,
                 position: position,
@@ -78,7 +81,7 @@ export const EmployeeProvider = ({ children }) => {
     let updateEmployee = async (id, name, email, position, phone) => {
         try {
             let response = await axios.patch(
-                `http://localhost:3000/api/employee/v1/employees/${id}`,
+                `${API_URL}/api/employee/v1/employees/${id}`,
                 { name, email, position, phone }
             );
 
@@ -102,7 +105,7 @@ export const EmployeeProvider = ({ children }) => {
         try {
 
 
-            let response = await axios.get(`http://localhost:3000/api/employee/v1/employees/${id}`);
+            let response = await axios.get(`${API_URL}/api/employee/v1/employees/${id}`);
 
 
             let name = response.data.data.name      //fetching employee values from api
@@ -133,7 +136,7 @@ export const EmployeeProvider = ({ children }) => {
     let deleteEmployee = async (id) => {
         try {
 
-            let response = await axios.delete(`http://localhost:3000/api/employee/v1/employees/${id}`);
+            let response = await axios.delete(`${API_URL}/api/employee/v1/employees/${id}`);
 
             toast.success(response.data.message)
             fetchEmployeeData()

@@ -34,10 +34,21 @@ export default function EditEmployeeModal({ isOpen, onClose }) {
         e.preventDefault()
 
         let id = Edit.id;
-        let name = Form.name;
-        let email = Form.email;
-        let position = Form.position;
-        let phone = Form.phone;
+        let name = Form.name.trim();
+        let email = Form.email.trim();
+        let position = Form.position.trim();
+        let phone = Form.phone.trim();
+
+
+
+
+        if (!validator.isEmail(email)) {                 //validiting email address
+            return toast("Enter A Valid Email Address")
+        }
+
+        if (phone.length != 10) {
+            return toast("Phone Number Must Be Of 10 Digits")        //mobile number must be of 10 digits
+        }
 
         updateEmployee(id, name, email, position, phone)  //calling update employee fn
 
