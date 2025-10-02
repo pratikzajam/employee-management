@@ -2,9 +2,12 @@ import express from 'express';
 import 'dotenv/config'
 import Router from './src/Routes/employee.routes.js'
 import connectDb from './src/config/db.config.js';
+import cors from "cors";
+
 
 const app = express()
 
+app.use(cors());
 app.use(express.json())
 app.use("/api/employee/v1", Router)
 
