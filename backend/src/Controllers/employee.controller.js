@@ -173,6 +173,17 @@ export let updateEmployee = async (req, res) => {
             })
         }
 
+        let isPhoneValid = validator.isMobilePhone(phone, "en-IN");
+
+        if (!isPhoneValid) {
+            return res.status(400).json({
+                status: false,
+                message: "Phone Number IS Not valid",
+                data: null
+            })
+        }
+
+
 
         if (!mongoose.Types.ObjectId.isValid(id)) {
             return res.status(400).json({
