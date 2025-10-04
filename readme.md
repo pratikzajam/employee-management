@@ -264,11 +264,7 @@ npm run preview
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 🐛 Known Issues
 
-- `react-toastify` is installed in backend dependencies (should be frontend only)
-- `age` field is in backend model but not used in frontend forms
-- Email field is disabled in edit modal (by design, but can be made editable)
 
 ## 🔮 Future Enhancements
 
