@@ -41,37 +41,56 @@ This Employee Management System provides a complete solution for managing employ
 
 ```
 employee-management/
+│
 ├── backend/
+│   ├── api/
+│   │   └── index.js                        # Main application entry point
 │   ├── src/
 │   │   ├── Controllers/
-│   │   │   └── employee.controller.js
+│   │   │   └── employee.controller.js      # Employee business logic
 │   │   ├── Models/
-│   │   │   └── employee.model.js
+│   │   │   └── employee.model.js           # Mongoose employee schema
 │   │   ├── Routes/
-│   │   │   └── employee.routes.js
+│   │   │   └── employee.routes.js          # API route definitions
 │   │   ├── Middlewares/
-│   │   │   └── fieldValidator.js
-│   │   └── config/
-│   │       └── db.config.js
-│   ├── index.js
-│   ├── package.json
-│   └── .env
+│   │   │   └── fieldValidator.js           # Request validation middleware
+│   │   ├── config/
+│   │   │   └── db.config.js                # MongoDB connection configuration
+│   │   └── __tests__/
+│   │       └── employee.test.js            # Jest test suite
+│   ├── .gitignore                          # Git ignore file
+│   ├── package.json                        # Dependencies and scripts
+│   ├── vercel.json                         # Vercel deployment configuration
+│   └── README.md                           # Backend documentation
+│
 ├── frontend/
-│   └── my-project/
-│       ├── src/
-│       │   ├── Components/
-│       │   │   ├── EmployeeList.jsx
-│       │   │   ├── AddEmployeeModal.jsx
-│       │   │   └── EditEmployeeModal.jsx
-│       │   ├── Context/
-│       │   │   └── EmployeeContext.jsx
-│       │   ├── App.jsx
-│       │   ├── main.jsx
-│       │   └── index.css
-│       ├── package.json
-│       └── .env
-├── .gitignore
-└── README.md
+│   ├── src/
+│   │   ├── Components/
+│   │   │   ├── EmployeeList.jsx            # Main employee list component
+│   │   │   ├── AddEmployeeModal.jsx        # Add employee modal
+│   │   │   └── EditEmployeeModal.jsx       # Edit employee modal
+│   │   ├── Context/
+│   │   │   └── EmployeeContext.jsx         # Global state management
+│   │   ├── assets/
+│   │   │   └── react.svg                   # React logo
+│   │   ├── App.jsx                         # Main app component
+│   │   ├── App.css                         # App-specific styles
+│   │   ├── main.jsx                        # Application entry point
+│   │   └── index.css                       # Global styles with Tailwind
+│   ├── public/
+│   │   └── vite.svg                        # Vite logo
+│   ├── .gitignore                          # Git ignore file
+│   ├── .env                                # Environment variables
+│   ├── index.html                          # HTML entry point
+│   ├── package.json                        # Dependencies and scripts
+│   ├── vite.config.js                      # Vite configuration
+│   ├── tailwind.config.js                  # Tailwind CSS configuration
+│   ├── postcss.config.js                   # PostCSS configuration
+│   ├── eslint.config.js                    # ESLint configuration
+│   └── README.md                           # Frontend documentation
+│
+├── .gitignore                              # Root git ignore
+└── README.md                               # Main project documentation
 ```
 
 ## 🚀 Getting Started
