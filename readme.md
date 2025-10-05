@@ -322,9 +322,7 @@ This project is licensed under the ISC License.
 - Tailwind CSS for the utility-first CSS framework
 - All open-source contributors
 
-## 📞 Support
 
-For support, please open an issue in the GitHub repository or contact the development team.
 
 ## 📄 Additional Documentation
 
